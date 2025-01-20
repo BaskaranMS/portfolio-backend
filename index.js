@@ -63,6 +63,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+app.get("/wake", async (req, res) => {
+  res.send("waked!").status(200);
+});
+
 // Admin Routes
 app.post("/admin/login", async (req, res) => {
   const { username, password } = req.body;
